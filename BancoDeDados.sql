@@ -1,7 +1,9 @@
-
-
 CREATE DATABASE RoyalGames
 GO
+
+use VH_Burguer
+
+drop database RoyalGames
 
 USE RoyalGames
 GO
@@ -40,7 +42,7 @@ CREATE TABLE Log_AlteracaoJogo(
 	DataAlteracao DATETIME NOT NULL,
 	NomeAnterior VARCHAR(100),
 	PrecoAnterior DECIMAL (10,2),
-	JogoID FOREIGN KEY REFERENCES Jogo(JogoID)
+	JogoID INT FOREIGN KEY REFERENCES Jogo(JogoID)
 )
 GO
 

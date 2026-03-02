@@ -2,6 +2,7 @@
 using RoyalGames.DTOs.UsuarioDto;
 using RoyalGames.Interfaces;
 using System.Security.Cryptography;
+using RoyalGames.Exceptions;
 using System.Text;
 
 namespace RoyalGames.Applications.Services
@@ -41,7 +42,7 @@ namespace RoyalGames.Applications.Services
         {
             if (string.IsNullOrEmpty(email) || !email.Contains("@"))
             {
-                throw new DomainExeception("Email inválido.");
+                throw new DomainException("Email inválido.");
             }
         }
 
@@ -49,7 +50,7 @@ namespace RoyalGames.Applications.Services
         {
             if (string.IsNullOrEmpty(senha))
             {
-                throw new DomainExeception("Senha não pode ser vazia.");
+                throw new DomainException("Senha não pode ser vazia.");
             }
 
             using var sha256 = SHA256.Create();
@@ -61,7 +62,7 @@ namespace RoyalGames.Applications.Services
             Usuario usuario = _repository.ObterPorId(id);
             if (usuario == null)
             {
-                throw new DomainExeception("Usuário não encontrado.");
+                throw new DomainException("Usuário não encontrado.");
             }
             return LerDto(usuario);
         }
@@ -72,7 +73,7 @@ namespace RoyalGames.Applications.Services
             Usuario usuario = _repository.ObterPorEmail(email);
             if (usuario == null)
             {
-                throw new DomainExeception("Usuário não encontrado.");
+                throw new DomainException("Usuário não encontrado.");
             }
             return LerDto(usuario);
         }
@@ -81,7 +82,7 @@ namespace RoyalGames.Applications.Services
         {
             if (string.IsNullOrEmpty(nome))
             {
-                throw new DomainExeception("Nome não pode ser vazio.");
+                throw new DomainException("Nome não pode ser vazio.");
             }
         }
 
@@ -91,13 +92,13 @@ namespace RoyalGames.Applications.Services
             ValidarEmail(usuarioDto.Email);
             if (_repository.EmailExiste(usuarioDto.Email))
             {
-                throw new DomainExeception("Email já cadastrado.");
+                throw new DomainException("Email já cadastrado.");
             }
             Usuario usuario = new Usuario
             {
                 Nome = usuarioDto.Nome,
                 Email = usuarioDto.Email,
-                Senha = Convert.ToBase64String(HashSenha(usuarioDto.Senha)),
+                Senha = HashSenha(usuarioDto.Senha),
                 StatusUsuario = true
             };
             _repository.Adicionar(usuario);

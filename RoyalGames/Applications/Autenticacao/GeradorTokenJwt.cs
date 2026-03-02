@@ -1,5 +1,6 @@
 ﻿using Microsoft.IdentityModel.Tokens;
 using RoyalGames.Domains;
+using RoyalGames.Exceptions;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
@@ -29,7 +30,7 @@ namespace RoyalGames.Applications.Autenticacao
 
             if (keyBytes.Length < 32) 
             {
-                throw new DomainEception("Jwt: ky precisa ter pelo menos 32 caracteres (256 bits).");
+                throw new DomainException("Jwt: ky precisa ter pelo menos 32 caracteres (256 bits).");
             }
 
             var securityKey = new SymmetricSecurityKey(keyBytes);

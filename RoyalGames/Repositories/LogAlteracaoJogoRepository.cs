@@ -15,14 +15,14 @@ namespace RoyalGames.Repositories
 
         public List<Log_AlteracaoJogo> Listar()
         {
-            List<Log_AlteracaoJogo> log = _context.Log_AlteracaoJogo.OrderByDescending(1 => 1.DataAlteracao).ToList();  
+            List<Log_AlteracaoJogo> log = _context.Log_AlteracaoJogo.OrderByDescending(i => i.DataAlteracao).ToList();  
 
             return log;
         }
 
         public List<Log_AlteracaoJogo> ListarPorJogo(int jogoId)
         {
-            List<Log_AlteracaoJogo> AlteracoesProduto = _context.Log_AlteracaoJogo
+            List<Log_AlteracaoJogo> AlteracoesJogo = _context.Log_AlteracaoJogo
                 .Where(log => log.JogoID == jogoId)
                 .OrderByDescending(log => log.DataAlteracao).ToList();
 

@@ -83,7 +83,7 @@ namespace RoyalGames.Applications.Services
 
             if(_repository.NomeExiste(criarDto.Nome, generoIdAtual: id))
             {
-                throw new DomainException("Ja existe outro Genero com esse nome.")
+                throw new DomainException("Ja existe outro Genero com esse nome.");
             }
 
             generoBanco.Nome = criarDto.Nome;

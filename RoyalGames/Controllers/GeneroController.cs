@@ -44,12 +44,27 @@ namespace RoyalGames.Controllers
         {
             try
             {
+                _service.Adicionar(criarDto);
+                return StatusCode(201);
+            }
+            catch(DomainException ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+
+        [HttpPut("{id}")]
+        [Authorize]
+        public ActionResult Atualizar(int id, CriarGeneroDto criarDto)
+        {
+            try
+            {
                 _service.Atualizar(id, criarDto);
                 return NoContent();
             }
             catch(DomainException ex)
             {
-                return BadRequest(ex.Message);
+                return BadRequest(ex.Message); 
             }
         }
 

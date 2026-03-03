@@ -1,10 +1,11 @@
 ﻿using Microsoft.Data.SqlClient;
 using RoyalGames.Contexts;
 using RoyalGames.Domains;
+using RoyalGames.Interfaces;
 
 namespace RoyalGames.Repositories
 {
-    public class GeneroRepository
+    public class GeneroRepository : IGeneroRepository
     {
         public readonly RoyalGamesContext _context;
 

@@ -27,7 +27,7 @@ builder.Services.AddScoped<PlataformaService>();
 //Log
 builder.Services.AddScoped<ILogAlteracaoJogoRepository, LogAlteracaoJogoRepository>();
 builder.Services.AddScoped<LogAlteracaoJogoService>();
-
+    
 
 var app = builder.Build();
 

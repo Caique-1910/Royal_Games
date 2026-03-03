@@ -46,6 +46,8 @@ namespace RoyalGames.Repositories
             {
                 consulta = consulta.Where(p => p.PlataformaId != plataformaIdAtual.Value);
             }
+
+            return consulta.Any(c => c.Nome == nome);
         }
 
         public Plataforma ObterPorId(int id)

@@ -46,7 +46,7 @@ namespace RoyalGames.Repositories
 
         public void Adicionar (Jogo jogo,  List<int> generoIds)
         {
-            List<Genero> generos = _context.Genero.Where(classificacao => generoIds.Contains(genero.GeneroID)).ToList();
+            List<Genero> generos = _context.Genero.Where(genero => generoIds.Contains(genero.GeneroID)).ToList();
             
 
             jogo.Genero = generos;
@@ -66,6 +66,7 @@ namespace RoyalGames.Repositories
             jogoBanco.Nome = jogo.Nome;
             jogoBanco.Preco = jogo.Preco;
             jogoBanco.Descricao = jogo.Descricao;
+            jogoBanco.ClassificacaoIndicativaID = jogo.ClassificacaoIndicativaID;
 
             if (jogo.Imagem != null && jogo.Imagem.Length > 0)
             {
@@ -78,7 +79,7 @@ namespace RoyalGames.Repositories
             }
 
            
-            var generos = _context.Genero.Where(classificacao => generoIds.Contains(genero.GeneroID)).ToList();
+            var generos = _context.Genero.Where(genero => generoIds.Contains(genero.GeneroID)).ToList();
 
             
             jogoBanco.Genero.Clear();

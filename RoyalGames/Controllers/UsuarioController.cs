@@ -51,11 +51,11 @@ namespace RoyalGames.Controllers
         }
 
         [HttpPost]
-        public ActionResult<LerUsuarioDTO> Adicionar(CriarUsuarioDTO dto)
+        public ActionResult<LerUsuarioDTO> Adicionar(CriarUsuarioDTO usuarioDTO)
         {
             try
             {
-                LerUsuarioDTO usuarioCriado = _service.Adicionar(dto);
+                LerUsuarioDTO usuarioCriado = _service.Adicionar(usuarioDTO);
                 return CreatedAtAction(nameof(ObterPorId), new { id = usuarioCriado.UsuarioID }, usuarioCriado);
             }
             catch (DomainException ex)
@@ -79,11 +79,11 @@ namespace RoyalGames.Controllers
         }
 
         [HttpDelete("{id}")]
-        public ActionResult Remover(int id)
+        public ActionResult Deletar(int id)
         {
             try
             {
-                _service.Remover(id);
+                _service.Deletar(id);
                 return NoContent();
             }
             catch (DomainException ex)

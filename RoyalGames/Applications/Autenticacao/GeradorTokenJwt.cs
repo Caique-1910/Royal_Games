@@ -24,7 +24,7 @@ namespace RoyalGames.Applications.Autenticacao
 
             var audience = _config["Jwt:Audience"];
 
-            var expiraMinutos = int.Parse(_config["Jwt:ExpiraMinutos"]);
+            var expiraMinutos = int.Parse(_config["Jwt:ExpiraEmMinutos"]);
 
             var keyBytes = Encoding.UTF8.GetBytes(chave);
 

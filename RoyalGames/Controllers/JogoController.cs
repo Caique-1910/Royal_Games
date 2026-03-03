@@ -86,12 +86,11 @@ namespace RoyalGames.Controllers
         [HttpPut("{id}")]
         [Consumes("multipart/form-data")]
         [Authorize]
-        public ActionResult Atualizar([FromForm] AtualizarJogoDTO jogoDto)
+        public ActionResult Atualizar(int id, [FromForm] AtualizarJogoDTO jogoDto)
         {
             try
             {
-               int usuarioId = ObterUsuarioIdLogado();
-                _service.Atualizar(jogoDto, usuarioId);
+                _service.Atualizar(id, jogoDto);
                 return NoContent(); // 204 No Content
             }
             catch (DomainException ex)

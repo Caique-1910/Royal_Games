@@ -91,6 +91,7 @@ namespace RoyalGames.Applications.Services
                 Imagem = ImagemParaBytes.ConverterParaBytes(jogoDTO.Imagem),
                 StatusJogo = true,
                 UsuarioID = usuarioId,
+                ClassificacaoIndicativaID = jogoDTO.classificacaoId
             };
 
 
@@ -100,7 +101,7 @@ namespace RoyalGames.Applications.Services
             return JogoParaDTO.ConverterParaDto(jogo);
         }
 
-        public LerJogoDTO Atualizar(int id, CriarJogoDTO jogoDTO)
+        public LerJogoDTO Atualizar(int id, AtualizarJogoDTO jogoDTO)
         {
             HorarioAlteracaoJogo.ValidarHorario();
 
@@ -133,6 +134,11 @@ namespace RoyalGames.Applications.Services
             if (jogoDTO.Imagem != null && jogoDTO.Imagem.Length > 0)
             {
                 jogoBanco.Imagem = ImagemParaBytes.ConverterParaBytes(jogoDTO.Imagem);
+            }
+
+            if(jogoDTO.StatusJogo.HasValue)
+            {
+                jogoBanco.StatusJogo = jogoDTO.StatusJogo.Value;
             }
 
             _repository.Atualizar(jogoBanco, jogoDTO.GeneroIDs);

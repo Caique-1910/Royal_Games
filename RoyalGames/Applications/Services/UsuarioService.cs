@@ -86,10 +86,10 @@ namespace RoyalGames.Applications.Services
             }
         }
 
-        public void Adicionar (CriarUsuarioDTO usuarioDto)
+        public LerUsuarioDTO Adicionar (CriarUsuarioDTO usuarioDto)
         {
-            ValidarNome(usuarioDto.Nome);
             ValidarEmail(usuarioDto.Email);
+
             if (_repository.EmailExiste(usuarioDto.Email))
             {
                 throw new DomainException("Email já cadastrado.");
@@ -102,6 +102,49 @@ namespace RoyalGames.Applications.Services
                 StatusUsuario = true
             };
             _repository.Adicionar(usuario);
+
+            return LerDto(usuario);
+        }
+
+        public LerUsuarioDTO Atualizar(int id, CriarUsuarioDTO usuarioDTO)
+        { 
+            Usuario usuarioBanco = _repository.ObterPorId(id);
+
+            if (usuarioBanco == null)
+            {
+                throw new DomainException("Usuário não encontrado.");
+            }
+
+            ValidarEmail(usuarioDTO.Email);
+            ValidarNome(usuarioDTO.Nome);
+
+            Usuario usuarioEmail = _repository.ObterPorEmail(usuarioDTO.Email);
+
+            if (usuarioEmail != null && usuarioEmail.UsuarioID != id)
+            {
+                throw new DomainException("Email já cadastrado.");
+            }
+
+            usuarioBanco.Nome = usuarioDTO.Nome;
+            usuarioBanco.Email = usuarioDTO.Email;
+            usuarioBanco.Senha = HashSenha(usuarioDTO.Senha);
+            usuarioBanco.StatusUsuario = usuarioDTO.StatusUsuario ?? usuarioBanco.StatusUsuario;
+
+            _repository.Atualizar(usuarioBanco);
+
+            return LerDto(usuarioBanco);
+        }
+
+        public void Deletar (int id)
+        {
+            Usuario usuario = _repository.ObterPorId(id);
+
+            if (usuario == null)
+            {
+                throw new DomainException("Usuário não encontrado.");
+            }
+
+            _repository.Deletar(id);
         }
 
     }

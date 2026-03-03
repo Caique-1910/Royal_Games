@@ -7,5 +7,7 @@
         public string Descricao { get; set; } = null!;
         public IFormFile Imagem { get; set; } = null!;
         public List<int> GeneroIDs { get; set; } = new();
+
+        public int classificacaoId { get; set; }
     }
 }

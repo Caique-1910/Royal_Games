@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
@@ -5,12 +6,19 @@ using Microsoft.OpenApi.Models;
 using System.Text;
 using RoyalGames.Applications.Services;
 using RoyalGames.Applications.Autenticacao;
+=======
+using Microsoft.EntityFrameworkCore;
+using RoyalGames.Applications.Services;
+>>>>>>> Arthur
 using RoyalGames.Contexts;
 using RoyalGames.Interfaces;
 using RoyalGames.Repositories;
 
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> Arthur
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -113,6 +121,22 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
             )
         };
     });
+
+// chamar nossa conexão com o banco aqui na program
+builder.Services.AddDbContext<RoyalGamesContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("Default")));
+
+//Genero
+builder.Services.AddScoped<IGeneroRepository, GeneroRepository>();
+builder.Services.AddScoped<GeneroService>();
+
+//Plataforma
+builder.Services.AddScoped<IPlataformaRepository, PlataformaRepository>();
+builder.Services.AddScoped<PlataformaService>();
+
+//Log
+builder.Services.AddScoped<ILogAlteracaoJogoRepository, LogAlteracaoJogoRepository>();
+builder.Services.AddScoped<LogAlteracaoJogoService>();
+    
 
 var app = builder.Build();
 

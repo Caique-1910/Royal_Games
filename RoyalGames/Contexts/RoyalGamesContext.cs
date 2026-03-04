@@ -22,6 +22,8 @@ public partial class RoyalGamesContext : DbContext
 
     public virtual DbSet<Jogo> Jogo { get; set; }
 
+    public virtual DbSet<Log_AlteracaoJogo> Log_AlteracaoJogo { get; set; }
+
     public virtual DbSet<Plataforma> Plataforma { get; set; }
 
     public virtual DbSet<Usuario> Usuario { get; set; }
@@ -34,7 +36,7 @@ public partial class RoyalGamesContext : DbContext
     {
         modelBuilder.Entity<ClassificacaoIndicativa>(entity =>
         {
-            entity.HasKey(e => e.ClassificacaoInditicativoID).HasName("PK__Classifi__00BF984B6D25D5B7");
+            entity.HasKey(e => e.ClassificacaoInditicativoID).HasName("PK__Classifi__00BF984B493B228D");
 
             entity.Property(e => e.Classificacao)
                 .HasMaxLength(50)
@@ -43,7 +45,7 @@ public partial class RoyalGamesContext : DbContext
 
         modelBuilder.Entity<Genero>(entity =>
         {
-            entity.HasKey(e => e.GeneroID).HasName("PK__Genero__A99D02688E525B7A");
+            entity.HasKey(e => e.GeneroID).HasName("PK__Genero__A99D02686F879AC3");
 
             entity.Property(e => e.Nome)
                 .HasMaxLength(50)
@@ -52,7 +54,7 @@ public partial class RoyalGamesContext : DbContext
 
         modelBuilder.Entity<Jogo>(entity =>
         {
-            entity.HasKey(e => e.JogoID).HasName("PK__Jogo__5919685590B0BA72");
+            entity.HasKey(e => e.JogoID).HasName("PK__Jogo__591968555FD4F00B");
 
             entity.ToTable(tb =>
                 {
@@ -60,7 +62,7 @@ public partial class RoyalGamesContext : DbContext
                     tb.HasTrigger("trg_ExclusaoJogo");
                 });
 
-            entity.HasIndex(e => e.Nome, "UQ__Jogo__7D8FE3B25FF74A50").IsUnique();
+            entity.HasIndex(e => e.Nome, "UQ__Jogo__7D8FE3B252005710").IsUnique();
 
             entity.Property(e => e.Nome)
                 .HasMaxLength(150)
@@ -70,11 +72,11 @@ public partial class RoyalGamesContext : DbContext
 
             entity.HasOne(d => d.ClassificacaoIndicativa).WithMany(p => p.Jogo)
                 .HasForeignKey(d => d.ClassificacaoIndicativaID)
-                .HasConstraintName("FK__Jogo__Classifica__778AC167");
+                .HasConstraintName("FK__Jogo__Classifica__6B24EA82");
 
             entity.HasOne(d => d.Usuario).WithMany(p => p.Jogo)
                 .HasForeignKey(d => d.UsuarioID)
-                .HasConstraintName("FK__Jogo__UsuarioID__76969D2E");
+                .HasConstraintName("FK__Jogo__UsuarioID__6A30C649");
 
             entity.HasMany(d => d.Genero).WithMany(p => p.Jogo)
                 .UsingEntity<Dictionary<string, object>>(
@@ -105,9 +107,24 @@ public partial class RoyalGamesContext : DbContext
                     });
         });
 
+        modelBuilder.Entity<Log_AlteracaoJogo>(entity =>
+        {
+            entity.HasKey(e => e.Log_AlteracaoJogoID).HasName("PK__Log_Alte__BB9D2C4F5FCCF3A0");
+
+            entity.Property(e => e.DataAlteracao).HasColumnType("datetime");
+            entity.Property(e => e.NomeAnterior)
+                .HasMaxLength(100)
+                .IsUnicode(false);
+            entity.Property(e => e.PrecoAnterior).HasColumnType("decimal(10, 2)");
+
+            entity.HasOne(d => d.Jogo).WithMany(p => p.Log_AlteracaoJogo)
+                .HasForeignKey(d => d.JogoID)
+                .HasConstraintName("FK__Log_Alter__JogoI__6E01572D");
+        });
+
         modelBuilder.Entity<Plataforma>(entity =>
         {
-            entity.HasKey(e => e.PlataformaId).HasName("PK__Platafor__B83567ED3E16E63B");
+            entity.HasKey(e => e.PlataformaId).HasName("PK__Platafor__B83567ED4AE7F5B1");
 
             entity.Property(e => e.Nome)
                 .HasMaxLength(50)
@@ -116,11 +133,11 @@ public partial class RoyalGamesContext : DbContext
 
         modelBuilder.Entity<Usuario>(entity =>
         {
-            entity.HasKey(e => e.UsuarioID).HasName("PK__Usuario__2B3DE7983BD96883");
+            entity.HasKey(e => e.UsuarioID).HasName("PK__Usuario__2B3DE79871E51DE8");
 
             entity.ToTable(tb => tb.HasTrigger("trg_ExclusaoUsuario"));
 
-            entity.HasIndex(e => e.Email, "UQ__Usuario__A9D105342FFEB653").IsUnique();
+            entity.HasIndex(e => e.Email, "UQ__Usuario__A9D10534217A6515").IsUnique();
 
             entity.Property(e => e.Email)
                 .HasMaxLength(150)

@@ -1,4 +1,4 @@
-namespace VHBurguer.Exceptions
+namespace RoyalGames.Exceptions
 {
     public class DomainException : Exception
     {

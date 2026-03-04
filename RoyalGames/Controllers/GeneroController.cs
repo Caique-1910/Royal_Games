@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using RoyalGames.Applications.Services;
 using RoyalGames.DTOs.GeneroDto;
-using VHBurguer.Exceptions;
+using RoyalGames.Exceptions;
 
 namespace RoyalGames.Controllers
 {

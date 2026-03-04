@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using RoyalGames.Repositories;
+using RoyalGames.Applications.Services;
 
 namespace RoyalGames.Controllers
 {
@@ -8,9 +8,9 @@ namespace RoyalGames.Controllers
     [ApiController]
     public class LogJogoController : ControllerBase
     {
-        private readonly LogAlteracaoJogoRepository _service;
+        private readonly LogAlteracaoJogoService _service;
 
-        public LogJogoController(LogAlteracaoJogoRepository service)
+        public LogJogoController(LogAlteracaoJogoService service)
         {
             _service = service;
         }

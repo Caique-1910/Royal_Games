@@ -1,7 +1,7 @@
 ﻿using RoyalGames.Domains;
 using RoyalGames.DTOs.GeneroDto;
 using RoyalGames.Interfaces;
-using VHBurguer.Exceptions;
+using RoyalGames.Exceptions;
 
 namespace RoyalGames.Applications.Services
 {

@@ -186,6 +186,7 @@
           "Children": [
             {
               "$type": "Document",
+<<<<<<< HEAD
               "DocumentIndex": 2,
               "Title": "LerLogJogoDto.cs",
               "DocumentMoniker": "C:\\Users\\52918563862\\Desktop\\Royal_Games\\RoyalGames\\DTOs\\LogJogoDto\\LerLogJogoDto.cs",
@@ -196,6 +197,17 @@
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-03-04T12:51:31.362Z",
               "EditorCaption": ""
+=======
+              "DocumentIndex": 1,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\52918563862\\Desktop\\Royal_Games\\RoyalGames\\appsettings.json",
+              "RelativeDocumentMoniker": "RoyalGames\\appsettings.json",
+              "ToolTip": "C:\\Users\\52918563862\\Desktop\\Royal_Games\\RoyalGames\\appsettings.json",
+              "RelativeToolTip": "RoyalGames\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAACAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-03-04T11:40:12.22Z"
+>>>>>>> c67e7cb0ba57b7d6f1d5e66d5064aeb8f9b7be55
             },
             {
               "$type": "Document",
@@ -324,8 +336,7 @@
               "RelativeToolTip": "RoyalGames\\Contexts\\RoyalGamesContext.cs",
               "ViewState": "AgIAAFwAAAAAAAAAAAAQwAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-04T11:39:30.166Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-04T11:39:30.166Z"
             },
             {
               "$type": "Document",
@@ -337,6 +348,7 @@
               "RelativeToolTip": "RoyalGames\\Applications\\Services\\PlataformaService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+<<<<<<< HEAD
               "WhenOpened": "2026-03-04T12:07:58.103Z",
               "EditorCaption": ""
             },
@@ -349,6 +361,19 @@
               "ToolTip": "C:\\Users\\52918563862\\Desktop\\Royal_Games\\RoyalGames\\Applications\\Services\\AutenticacaoService.cs",
               "RelativeToolTip": "RoyalGames\\Applications\\Services\\AutenticacaoService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAARAAAAAAAAAA==",
+=======
+              "WhenOpened": "2026-03-04T11:38:51.757Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\52918563862\\Desktop\\Royal_Games\\RoyalGames\\Program.cs",
+              "RelativeDocumentMoniker": "RoyalGames\\Program.cs",
+              "ToolTip": "C:\\Users\\52918563862\\Desktop\\Royal_Games\\RoyalGames\\Program.cs",
+              "RelativeToolTip": "RoyalGames\\Program.cs",
+              "ViewState": "AgIAAC8AAAAAAAAAAAAAAIgAAAAmAAAAAAAAAA==",
+>>>>>>> c67e7cb0ba57b7d6f1d5e66d5064aeb8f9b7be55
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-03-04T11:32:04.423Z",
               "EditorCaption": ""
@@ -376,8 +401,7 @@
               "RelativeToolTip": "RoyalGames\\Controllers\\AutenticacaoController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAcAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-04T11:32:04.425Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-04T11:32:04.425Z"
             },
             {
               "$type": "Document",
@@ -506,12 +530,39 @@
               "RelativeToolTip": "RoyalGames\\Applications\\Conversoes\\ImagemParaBytes.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-04T11:32:04.467Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-04T11:32:04.467Z"
             },
             {
               "$type": "Document",
+<<<<<<< HEAD
               "DocumentIndex": 29,
+=======
+              "DocumentIndex": 5,
+              "Title": "HorarioAlteracaoJogo.cs",
+              "DocumentMoniker": "C:\\Users\\52918563862\\Desktop\\Royal_Games\\RoyalGames\\Applications\\Regras\\HorarioAlteracaoJogo.cs",
+              "RelativeDocumentMoniker": "RoyalGames\\Applications\\Regras\\HorarioAlteracaoJogo.cs",
+              "ToolTip": "C:\\Users\\52918563862\\Desktop\\Royal_Games\\RoyalGames\\Applications\\Regras\\HorarioAlteracaoJogo.cs",
+              "RelativeToolTip": "RoyalGames\\Applications\\Regras\\HorarioAlteracaoJogo.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAABqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-04T11:32:04.465Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "DomainException.cs",
+              "DocumentMoniker": "C:\\Users\\52918563862\\Desktop\\Royal_Games\\RoyalGames\\Exceptions\\DomainException.cs",
+              "RelativeDocumentMoniker": "RoyalGames\\Exceptions\\DomainException.cs",
+              "ToolTip": "C:\\Users\\52918563862\\Desktop\\Royal_Games\\RoyalGames\\Exceptions\\DomainException.cs",
+              "RelativeToolTip": "RoyalGames\\Exceptions\\DomainException.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-04T11:32:04.462Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+>>>>>>> c67e7cb0ba57b7d6f1d5e66d5064aeb8f9b7be55
               "Title": "IClassificacaoIndicativaRepository.cs",
               "DocumentMoniker": "C:\\Users\\52918563862\\Desktop\\Royal_Games\\RoyalGames\\Interfaces\\IClassificacaoIndicativaRepository.cs",
               "RelativeDocumentMoniker": "RoyalGames\\Interfaces\\IClassificacaoIndicativaRepository.cs",
@@ -519,8 +570,24 @@
               "RelativeToolTip": "RoyalGames\\Interfaces\\IClassificacaoIndicativaRepository.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAvAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+<<<<<<< HEAD
               "WhenOpened": "2026-03-04T11:32:04.436Z",
               "EditorCaption": ""
+=======
+              "WhenOpened": "2026-03-04T11:32:04.436Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "AutenticacaoService.cs",
+              "DocumentMoniker": "C:\\Users\\52918563862\\Desktop\\Royal_Games\\RoyalGames\\Applications\\Services\\AutenticacaoService.cs",
+              "RelativeDocumentMoniker": "RoyalGames\\Applications\\Services\\AutenticacaoService.cs",
+              "ToolTip": "C:\\Users\\52918563862\\Desktop\\Royal_Games\\RoyalGames\\Applications\\Services\\AutenticacaoService.cs",
+              "RelativeToolTip": "RoyalGames\\Applications\\Services\\AutenticacaoService.cs",
+              "ViewState": "AgIAABIAAAAAAAAAAAAAADEAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-04T11:32:04.423Z"
+>>>>>>> c67e7cb0ba57b7d6f1d5e66d5064aeb8f9b7be55
             },
             {
               "$type": "Document",

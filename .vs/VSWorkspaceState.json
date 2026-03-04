@@ -1,0 +1,16 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\RoyalGames",
+    "\\RoyalGames\\Applications",
+    "\\RoyalGames\\Applications\\Regras",
+    "\\RoyalGames\\Applications\\Services",
+    "\\RoyalGames\\Contexts",
+    "\\RoyalGames\\Controllers",
+    "\\RoyalGames\\Domains",
+    "\\RoyalGames\\DTOs",
+    "\\RoyalGames\\Repositories"
+  ],
+  "SelectedNode": "\\RoyalGames\\Program.cs",
+  "PreviewInSolutionExplorer": false
+}

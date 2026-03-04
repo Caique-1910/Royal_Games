@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
@@ -6,19 +6,18 @@ using Microsoft.OpenApi.Models;
 using System.Text;
 using RoyalGames.Applications.Services;
 using RoyalGames.Applications.Autenticacao;
-=======
-using Microsoft.EntityFrameworkCore;
-using RoyalGames.Applications.Services;
->>>>>>> Arthur
 using RoyalGames.Contexts;
 using RoyalGames.Interfaces;
 using RoyalGames.Repositories;
 
-<<<<<<< HEAD
 
 
-=======
->>>>>>> Arthur
+
+
+
+
+
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.

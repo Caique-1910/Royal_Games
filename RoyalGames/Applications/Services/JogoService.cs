@@ -55,9 +55,15 @@ namespace RoyalGames.Applications.Services
             {
                 throw new DomainException("A imagem do jogo é obrigatória.");
             }
+
             if (jogoDTO.GeneroIDs == null || jogoDTO.GeneroIDs.Count == 0)
             {
                 throw new DomainException("O jogo deve estar associado a pelo menos um gênero.");
+            }
+
+            if (jogoDTO.PlataformaIDs == null || jogoDTO.PlataformaIDs.Count == 0)
+            {
+                throw new DomainException("O jogo deve estar associado a pelo menos uma platafroma.");
             }
 
         }
@@ -96,7 +102,7 @@ namespace RoyalGames.Applications.Services
 
 
 
-            _repository.Adicionar(jogo, jogoDTO.GeneroIDs);
+            _repository.Adicionar(jogo, jogoDTO.GeneroIDs, jogoDTO.PlataformaIDs);
 
             return JogoParaDTO.ConverterParaDto(jogo);
         }
@@ -122,6 +128,11 @@ namespace RoyalGames.Applications.Services
                 throw new DomainException("O jogo deve estar associado a pelo menos um gênero.");
             }
 
+            if (jogoDTO.PlataformaIDs == null || jogoDTO.PlataformaIDs.Count == 0)
+            {
+                throw new DomainException("O jogo deve estar associado a pelo menos um gênero.");
+            }
+
             if (jogoDTO.Preco <= 0)
             {
                 throw new DomainException("O preço do jogo deve ser maior que zero.");
@@ -141,7 +152,7 @@ namespace RoyalGames.Applications.Services
                 jogoBanco.StatusJogo = jogoDTO.StatusJogo.Value;
             }
 
-            _repository.Atualizar(jogoBanco, jogoDTO.GeneroIDs);
+            _repository.Atualizar(jogoBanco, jogoDTO.GeneroIDs, jogoDTO.PlataformaIDs);
 
             return JogoParaDTO.ConverterParaDto(jogoBanco);
         }

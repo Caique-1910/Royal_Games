@@ -16,5 +16,8 @@
         public int? ClassificacaoIndicativaID { get; set; }
         public List<string> Generos { get; set; } = new List<string>();
         public List<int> GenerosIds { get; set; } = new();
+
+        public List<string> Plataformas { get; set; } = new List<string>();
+        public List<int> PlataformasIds { get; set; } = new();
     }
 }

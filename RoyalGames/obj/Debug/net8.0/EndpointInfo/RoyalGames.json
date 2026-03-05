@@ -457,6 +457,13 @@
                       "format": "int32"
                     }
                   },
+                  "PlataformaIDs": {
+                    "type": "array",
+                    "items": {
+                      "type": "integer",
+                      "format": "int32"
+                    }
+                  },
                   "classificacaoId": {
                     "type": "integer",
                     "format": "int32"
@@ -477,6 +484,9 @@
                   "style": "form"
                 },
                 "GeneroIDs": {
+                  "style": "form"
+                },
+                "PlataformaIDs": {
                   "style": "form"
                 },
                 "classificacaoId": {
@@ -588,6 +598,13 @@
                       "type": "integer",
                       "format": "int32"
                     }
+                  },
+                  "PlataformaIDs": {
+                    "type": "array",
+                    "items": {
+                      "type": "integer",
+                      "format": "int32"
+                    }
                   }
                 }
               },
@@ -617,6 +634,9 @@
                   "style": "form"
                 },
                 "GeneroIDs": {
+                  "style": "form"
+                },
+                "PlataformaIDs": {
                   "style": "form"
                 }
               }
@@ -1272,6 +1292,21 @@
             "nullable": true
           },
           "generosIds": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "nullable": true
+          },
+          "plataformas": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "nullable": true
+          },
+          "plataformasIds": {
             "type": "array",
             "items": {
               "type": "integer",

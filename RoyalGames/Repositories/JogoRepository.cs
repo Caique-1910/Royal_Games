@@ -16,13 +16,13 @@ namespace RoyalGames.Repositories
 
         public List<Jogo> Listar()
         {
-            List<Jogo> jogos = _context.Jogo.Include(jogo => jogo.Genero).Include(jogo => jogo.Usuario).ToList();
+            List<Jogo> jogos = _context.Jogo.Include(jogo => jogo.Genero).Include(jogo => jogo.Plataforma).Include(jogo => jogo.Usuario).ToList();
             return jogos;
         }
 
         public Jogo ObterPorId (int id) 
         {
-            Jogo? jogo = _context.Jogo.Include(jogo => jogo.Genero).Include(jogo => jogo.Usuario).FirstOrDefault(jogo => jogo.JogoID == id);
+            Jogo? jogo = _context.Jogo.Include(jogo => jogo.Genero).Include(jogo => jogo.Plataforma).Include(jogo => jogo.Usuario).FirstOrDefault(jogo => jogo.JogoID == id);
             return jogo;
         }
 
@@ -44,19 +44,21 @@ namespace RoyalGames.Repositories
             return jogo;
         }
 
-        public void Adicionar (Jogo jogo,  List<int> generoIds)
+        public void Adicionar (Jogo jogo,  List<int> generoIds, List<int> plataformaIds)
         {
             List<Genero> generos = _context.Genero.Where(genero => generoIds.Contains(genero.GeneroID)).ToList();
-            
+            List<Plataforma> plataformas = _context.Plataforma.Where(plataforma => plataformaIds.Contains(plataforma.PlataformaId)).ToList();
 
             jogo.Genero = generos;
+            jogo.Plataforma = plataformas;
             _context.Jogo.Add(jogo);
             _context.SaveChanges();
         }
 
-        public void Atualizar (Jogo jogo, List<int> generoIds)
+        public void Atualizar (Jogo jogo, List<int> generoIds, List<int> plataformaIds)
         {
-            Jogo? jogoBanco = _context.Jogo.Include(jogo => jogo.Genero).FirstOrDefault(jogoAux => jogoAux.JogoID == jogo.JogoID);
+            Jogo? jogoBanco = _context.Jogo.Include(jogo => jogo.Genero).Include(jogo => jogo.Plataforma).FirstOrDefault(jogoAux => jogoAux.JogoID == jogo.JogoID);
+
 
             if (jogoBanco == null)
             {
@@ -80,13 +82,18 @@ namespace RoyalGames.Repositories
 
            
             var generos = _context.Genero.Where(genero => generoIds.Contains(genero.GeneroID)).ToList();
+            var plataformas = _context.Plataforma.Where(plataforma => plataformaIds.Contains(plataforma.PlataformaId)).ToList();
 
-            
             jogoBanco.Genero.Clear();
 
             foreach (var genero in generos)
             {
                 jogoBanco.Genero.Add(genero);
+            }
+
+            foreach (var plataforma in plataformas)
+            {
+                jogoBanco.Plataforma.Add(plataforma);
             }
 
             _context.SaveChanges();

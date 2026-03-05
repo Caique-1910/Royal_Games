@@ -11,5 +11,7 @@
         public int? UsuarioID { get; set; }
         public int? ClassificacaoIndicativaID { get; set; }
         public List<int> GeneroIDs { get; set; } = new List<int>();
+
+        public List<int> PlataformaIDs { get; set; } = new List<int>();
     }
 }

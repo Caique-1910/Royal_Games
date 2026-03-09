@@ -83,7 +83,7 @@ Insomnia REST Client
 📂 Estrutura do Projeto
 
 Exemplo de organização utilizando DDD:
-
+```text
 RoyalGames
 │
 ├── RoyalGames.API
@@ -102,6 +102,7 @@ RoyalGames
 ├── RoyalGames.Infrastructure
 │   ├── Repositories
 │   └── Data
+```
 🚀 Como Executar o Projeto
 
 1️⃣ Clonar o repositório

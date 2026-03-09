@@ -167,7 +167,7 @@ utilizar Swagger para documentação
 
 realizar testes de endpoints com Insomnia
 
-👨‍💻 Autor
+👨‍💻 Autores
 
 Desenvolvido por:
 

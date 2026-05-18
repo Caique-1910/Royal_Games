@@ -23,7 +23,7 @@ namespace RoyalGames.Applications.Conversoes
 
                 GenerosIds = jogo.Genero.Select(genero => genero.GeneroID).ToList(),
                 Generos = jogo.Genero.Select(genero => genero.Nome).ToList(),
-
+                ImagemUrl = $"jogo/{jogo.JogoID}/imagem",
                 Plataformas = jogo.Plataforma.Select(plataforma => plataforma.Nome).ToList(),
 
                 PlataformasIds = jogo.Plataforma.Select(plataforma => plataforma.PlataformaId).ToList()

@@ -19,5 +19,6 @@
 
         public List<string> Plataformas { get; set; } = new List<string>();
         public List<int> PlataformasIds { get; set; } = new();
+        public string ImagemUrl { get; set; }
     }
 }

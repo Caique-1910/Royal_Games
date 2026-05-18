@@ -1313,6 +1313,10 @@
               "format": "int32"
             },
             "nullable": true
+          },
+          "imagemUrl": {
+            "type": "string",
+            "nullable": true
           }
         },
         "additionalProperties": false
